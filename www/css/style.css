@@ -1,1 +1,24 @@
 /* Empty. Add your own CSS if you like */
+.imagen-tras{
+  background-image: url("../img/background.png");
+  background-color: #cccccc;
+}
+.list-buttons{
+  padding-top: 70px;
+  background-image: url("../img/background.png");
+  background-color: #cccccc;
+}
+.button.button-eba {
+
+    background-color: #181616;
+    opacity: 0.7;
+    width: 80%;
+    height: 80px;
+    left: 10%;
+    top: 10%;
+    color: #FFF;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border: 0px solid #000000;
+}
