@@ -1,0 +1,17 @@
+<ion-view view-title="Produtos" class="imagen-tras-claro">
+    <ion-content>
+        <div class="list card" ng-repeat="product in productos">
+            <div class="item">
+                <h2>{{product.producto}}</h2>
+                <p>Empresa Bolviana de Almendra</p>
+                <img class="full-image" ng-src="{{product.img}}">
+            </div>
+            <div class="item item-body">
+                <a class="button button-large button-dark button-eba-product" href="#/app/producto/{{product.id}}">
+                   DESCRIPCION
+                </a>
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>

@@ -1,0 +1,20 @@
+<ion-view view-title="Recetas" class="imagen-tras-claro">
+    <ion-content>
+        <div class="list card"  ng-repeat="receta in recetas">
+            <div class="item">
+
+                <h2>{{ receta.receta }}</h2>
+                <p>Video de como preparar: {{ receta.receta }}</p>
+            </div>
+
+            <div class="video-container">
+                <iframe  ng-src="{{ receta.link | trustUrl }}" frameborder="0"></iframe>
+            </div>
+
+            <a class="item item-icon-left assertive" href="#/app/recetas/{{receta.id}}">
+                <i class="icon ion-star"></i>
+                Ingredientes
+            </a>
+        </div>
+    </ion-content>
+</ion-view>

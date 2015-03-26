@@ -1,24 +1,62 @@
 /* Empty. Add your own CSS if you like */
 .imagen-tras{
-  background-image: url("../img/background.png");
+  background-image: url("../img/fondo.png");
   background-color: #cccccc;
 }
+.imagen-tras-claro{
+     background-image: url("../img/fondo_claro.png");
+     background-color: #cccccc;
+ }
 .list-buttons{
-  padding-top: 70px;
-  background-image: url("../img/background.png");
-  background-color: #cccccc;
+  padding-top: 100px;
+}
+
+.big-buttos{
+  width: 100%;
+  background-color: white;
 }
 .button.button-eba {
-
     background-color: #181616;
     opacity: 0.7;
     width: 80%;
-    height: 80px;
+    height:  80px;
     left: 10%;
     top: 10%;
-    color: #FFF;
+    vertical-align: 60px;
     border-radius: 10px 10px 10px 10px;
     -moz-border-radius: 10px 10px 10px 10px;
     -webkit-border-radius: 10px 10px 10px 10px;
     border: 0px solid #000000;
+}
+.button.button-eba-product {
+    background-color: #181616;
+    opacity: 0.7;
+    width: 80%;
+    height:  35px;
+    left: 10%;
+    top: 10%;
+    vertical-align: 60px;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border: 0px solid #000000;
+}
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; height: 0; overflow: hidden;
+}
+
+.video-container iframe, .video-container object, .video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.text-eba {
+    font-family: fantasy;
+    text-align: justify;
+    padding: 2%;
+    font-size: large;
 }

@@ -47,25 +47,85 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     }
   })
-    .state('app.playlists', {
-      url: "/playlists",
+  .state('app.nosotros', {
+    url: "/nosotros",
+    views: {
+      'menuContent': {
+         templateUrl: "templates/nosotros.html"
+      }
+    }
+  })
+  .state('app.productos', {
+    url: "/productos",
+    views: {
+      'menuContent': {
+         templateUrl: "templates/productos.html",
+         controller: "ProductosCtrl"
+      }
+    }
+  })
+  .state('app.producto', {
+    url: "/producto/:productosId",
+    views: {
+      'menuContent': {
+         templateUrl: "templates/producto.html",
+         controller: "ProductoCtrl"
+      }
+    }
+  })
+  .state('app.rse', {
+    url: "/rse",
+    views: {
+      'menuContent': {
+         templateUrl: "templates/rse.html"
+      }
+    }
+  })
+  .state('app.reservas', {
+    url: "/reservas",
+    views: {
+      'menuContent': {
+         templateUrl: "templates/reservas.html"
+      }
+    }
+  })
+    .state('app.recetas', {
+        url: "/recetas",
+        views: {
+            'menuContent': {
+                templateUrl: "templates/recetas.html",
+                controller: 'RecetasCtrl'
+            }
+        }
+    })
+      .state('app.single', {
+          url: "/recetas/:recetasId",
+          views: {
+              'menuContent': {
+                  templateUrl: "templates/receta.html",
+                  controller: 'RecetaCtrl'
+              }
+          }
+      })
+      .state('app.contactenos', {
+          url: "/contactenos",
+          views: {
+              'menuContent': {
+                  templateUrl: "templates/contactenos.html"
+              }
+          }
+      })
+      .state('app.playlists', {
+      url: "/Menu",
       views: {
         'menuContent': {
           templateUrl: "templates/playlists.html",
-          controller: 'PlaylistsCtrl'
+          controller: 'NosotrosCtrl'
         }
       }
-    })
+    });
 
-  .state('app.single', {
-    url: "/playlists/:playlistId",
-    views: {
-      'menuContent': {
-        templateUrl: "templates/playlist.html",
-        controller: 'PlaylistCtrl'
-      }
-    }
-  });
+
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/app/Menu');
 });

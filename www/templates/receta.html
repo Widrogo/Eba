@@ -1,0 +1,15 @@
+<ion-view view-title="Recetario"  class="imagen-tras">
+    <ion-content>
+        <h1 style="text-align: center;">{{ recetario.receta }}</h1>
+        <div class="video-container">
+            <iframe ng-src="{{recetario.link | trustUrl}}" frameborder="0" width="90%" height="315"></iframe>
+        </div>
+        <br/>
+        <h3>Ingredientes: </h3>
+        <ul class="text-eba" ng-repeat="ingre in recetario.ingredientes">
+            <li>
+                <strong>* {{ ingre }}</strong>
+            </li>
+        </ul>
+    </ion-content>
+</ion-view>
