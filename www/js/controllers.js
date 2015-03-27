@@ -10,7 +10,8 @@ angular.module('starter.controllers', [])
             {
                 "id": 1,
                 "producto": "ALFAFOR DE ALMENDRA",
-                "img": "../img/alfafor.jpg",
+                "img": "http://i.imgur.com/pEoufVn.jpg",
+                "precio" : "2.50",
                 "descripcion": [
                     "Este producto está constituido por dos galletas, elaboradas a base de harina de trigo, harina de almendra, mantequilla y azúcar, es un producto horneado.",
                     "Estas galletas están separadas entre sí por un relleno de chocolate mezclada con harina de almendra, es un producto dulce al consumirlo, el sabor del chocolate le da el toque especial que se estaba buscando."
@@ -20,7 +21,8 @@ angular.module('starter.controllers', [])
 
                 "id": 2,
                 "producto": "ALMENDRAS",
-                "img": "../img/almendras.jpg",
+                "img": "http://i.imgur.com/hz781zD.jpg",
+                "precio" : "66",
                 "descripcion": [
                     "Aunque están cargados de ácidos grasos insaturados, todavía hay personas y profesionales de la salud que consideran que los frutos secos engordan, por este motivo, es importante romper este mito.",
                     "En comparación con una dieta baja en grasa, proporcionaron beneficios significativos en los niveles de glucosa en plasma, resistencia a la insulina, y una reducción de los factores clásicos de riesgo cardiovascular."
@@ -30,7 +32,8 @@ angular.module('starter.controllers', [])
 
                 "id": 3,
                 "producto": "MUFFIN DE ALMENDRA",
-                "img": "../img/muffin.jpg",
+                "img": "http://i.imgur.com/8EkoGuZ.jpg",
+                "precio" : "2.20",
                 "descripcion": [
                     "Un muffin es un producto de repostería, elaborado con harina de trigo y otros ingredientes, sobre todo dulces, en este caso adicionando también harina de almendra, este es un producto horneado en moldes que presentan una base cilíndrica y una superficie más ancha.",
                     "Este es un producto que entre sus características presenta esponjosidad, y es una masa dulce, además de ser una masa húmeda, se le adicionan diferentes ingredientes para darle un sabor especial."
@@ -40,7 +43,8 @@ angular.module('starter.controllers', [])
 
                 "id": 4,
                 "producto": "TURRÓN DE ALMENDRA",
-                "img": "../img/turron.jpg",
+                "img": "http://i.imgur.com/lPPPzP4.jpg",
+                "precio" : "2.50",
                 "descripcion": [
                     "El turrón es un dulce, característico de Navidad, es un producto elaborado con almendra y miel principalmente. ",
                     "Turrón es un dulce obtenido por la cocción de miel, con incorporación y amasado de almendras trituradas, y clara de huevo, esta masa se coloca como relleno, en las galletas (ostias)."
@@ -50,7 +54,8 @@ angular.module('starter.controllers', [])
 
                 "id": 5,
                 "producto": "BESO DE PANDO",
-                "img": "../img/beso.jpg",
+                "img": "http://i.imgur.com/Cen92ej.jpg",
+                "precio" : "4.50",
                 "descripcion": [
                     "Es un dulce de mazapán, cubierto con chocolate.",
                     "El Mazapan es un dulce obtenido a partir de la molienda, mezcla y compactación de almendras seleccionadas, limpias libres de cascarilla, adicionadas con azúcar glass, licores y esencias."
@@ -60,7 +65,8 @@ angular.module('starter.controllers', [])
 
                 "id": 6,
                 "producto": "CAJA DE GALLETAS DE ALMENDRA",
-                "img": "../img/galletas.jpg",
+                "img": "http://i.imgur.com/rydGKTS.jpg",
+                "precio" : "8",
                 "descripcion": [
                     "Las galletas de almendra y salvado de trigo es un alimento rico en selenio, fosforo, zinc y potasio, además de Fibra y hierro.",
                     "El salvado de trigo es un alimento sin colesterol y por lo tanto, su consumo ayuda a mantener bajo el colesterol, lo cual es beneficioso para nuestro sistema circulatorio y nuestro corazón.",
@@ -274,7 +280,7 @@ angular.module('starter.controllers', [])
     $scope.productos = productosService;
 })
 .controller('ProductoCtrl', function($scope, $stateParams, productosService) {
-    console.log();
+
     if($stateParams.productosId){
         var byProducto = {};
         productosService.forEach(function(producto) {
@@ -284,7 +290,27 @@ angular.module('starter.controllers', [])
     }else{
         $state.go("app.productos");
     }
-        console.log($scope.product);
+
+})
+.controller('ReservasCtrl', function($scope, $state, productosService){
+        $scope.productos = productosService;
+})
+.controller('ReservaCtrl', function($scope, $stateParams, $state, productosService){
+
+        if($stateParams.reservaId){
+            var byProducto = {};
+            productosService.forEach(function(producto) {
+                byProducto[producto.id] = producto;
+            });
+            $scope.product = byProducto[$stateParams.reservaId];
+            console.log($scope.product);
+        }else{
+            $state.go("app.reservas");
+        }
+        $scope.llevame = function () {
+            alert("Su producto fue reservado.");
+            $state.go("app.reservas");
+        }
 })
 .controller('RecetasCtrl', function($scope, recetaService) {
         $scope.recetas = recetaService;

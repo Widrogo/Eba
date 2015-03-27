@@ -1,15 +1,17 @@
-<ion-view view-title="Reservas" class="imagen-tras">
+<ion-view view-title="Resevas" class="imagen-tras-claro">
     <ion-content>
-        <div style="padding-bottom: 50px">
-            
+        <div class="list card" ng-repeat="product in productos">
+            <div class="item">
+                <h2>{{product.producto}}</h2>
+                <p>Empresa Bolviana de Almendra</p>
+                <img class="full-image" ng-src="{{product.img}}">
+            </div>
+            <div class="item item-body">
+                <a class="button button-large button-dark button-eba-product" href="#/app/reserva/{{product.id}}">
+                    RESERVAR
+                </a>
+            </div>
         </div>
-        <div class="list list-inset">
-            <label class="item item-input">
-                <input type="text" placeholder="First Name">
-            </label>
-            <label class="item item-input">
-                <input type="text" placeholder="Last Name">
-            </label>
-        </div>
+
     </ion-content>
 </ion-view>

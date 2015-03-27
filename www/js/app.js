@@ -85,10 +85,20 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     url: "/reservas",
     views: {
       'menuContent': {
-         templateUrl: "templates/reservas.html"
+         templateUrl: "templates/reservas.html",
+         controller: "ReservasCtrl"
       }
     }
   })
+      .state('app.reserva', {
+          url: "/reserva/:reservaId",
+          views: {
+              'menuContent': {
+                  templateUrl: "templates/reserva.html",
+                  controller: "ReservaCtrl"
+              }
+          }
+      })
     .state('app.recetas', {
         url: "/recetas",
         views: {

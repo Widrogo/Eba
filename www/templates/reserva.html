@@ -1,0 +1,23 @@
+<ion-view view-title="Reseva" class="imagen-tras-claro">
+    <ion-content>
+        <div class="list card">
+            <div class="item">
+                <h2>{{product.producto}}</h2>
+                <p>Empresa Bolviana de Almendra</p>
+                <img class="full-image" ng-src="{{product.img}}">
+            </div>
+            <div class="item item-body">
+                <h2>Precio</h2>
+                <p>{{ product.precio }} Bs</p>
+
+                <label class="item item-input">
+                    <span class="input-label">Cantidad</span>
+                    <input type="number">
+                </label>
+                <br/>
+                <button class="button button-large button-dark button-eba-product" ng-click="llevame()">RESERVAR</button>
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>
