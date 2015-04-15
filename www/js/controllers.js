@@ -9,7 +9,7 @@ angular.module('starter.controllers', [])
         var productos =[
             {
                 "id": 1,
-                "producto": "ALFAFOR DE ALMENDRA",
+                "producto": "ALFAJOR DE ALMENDRA",
                 "img": "http://i.imgur.com/pEoufVn.jpg",
                 "precio" : "2.50",
                 "descripcion": [
